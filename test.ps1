@@ -1,3 +1,3 @@
-Write-Host $repositoryName
+Write-Host $($repositoryName)
 
-Write-Host $ENV:repositoryName
+Write-Host $($ENV:repositoryName)
