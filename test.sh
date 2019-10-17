@@ -1,6 +1,6 @@
 JSON_STRING=$( jq -n \
-              --arg client_id "$PACKERCLIENTID \
-              --arg subscription_id "$SUBSCRIPTIONID \
+              --arg client_id "$PACKERCLIENTID" \
+              --arg subscription_id "$SUBSCRIPTIONID" \
               --arg build_resource_group_name "$RESOURCEGROUPNAME" \
               --arg managed_image_resource_group_name "$RESOURCEGROUPNAME" \
               --arg client_secret "$PACKERCLIENTSECRET" \
