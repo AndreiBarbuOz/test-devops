@@ -8,4 +8,4 @@ stages:
     pool:
         vmImage: 'ubuntu-latest'
     steps:
-    - bash: echo $(parameters.name)
+    - bash: echo ${{parameters.name}}
