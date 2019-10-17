@@ -13,7 +13,7 @@ stages:
     steps:
     - task: Bash@3
       inputs:
-      targetType: filePath
-      filePath: test.sh
+        targetType: filePath
+        filePath: test.sh
       env:
         MySecret: $(repositoryName)
