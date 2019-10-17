@@ -11,5 +11,9 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    - bash: echo "$(dockerConnection)" > test.txt
-    - bash: cat test.txt
+    - task: Bash@3
+      inputs:
+      targetType: filePath
+      filePath: test.sh
+      env:
+        MySecret: $(repositoryName)
