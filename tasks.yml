@@ -1,7 +1,7 @@
 parameters:
-  dockerConnection: $(dockerConnection)
-  repositoryName: $(repositoryName)
-  containerRegistry: $(containerRegistry)
+  dockerConnection: ''
+  repositoryName: ''
+  containerRegistry: ''
 
 stages:
 - stage: test_1
