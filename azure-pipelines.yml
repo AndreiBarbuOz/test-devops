@@ -10,5 +10,5 @@ pool:
 
 steps:
 - script: echo $(azureSubscription)
-  displayName: 'Run a one-line script'
+  displayName: Run $[variables.azureSubscription] a one-line script
 
