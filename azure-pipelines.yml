@@ -11,6 +11,8 @@ jobs:
 - job: build
   pool:
     vmImage: 'ubuntu-latest'
+  container:
+    image: $(containerRegistry).azurecr.io/$(repositoryName):latest
   steps:
   - bash: echo $(var2)
   - bash: echo $(containerRegistry)
