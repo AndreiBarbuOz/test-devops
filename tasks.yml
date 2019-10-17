@@ -1,3 +1,6 @@
+variables: 
+- group: demo-vm-deploy
+
 parameters:
   name: ''
 
@@ -6,6 +9,9 @@ stages:
   jobs:
   - job: build
     pool:
-        vmImage: 'ubuntu-latest'
+      vmImage: 'ubuntu-latest'
+    container:
+      image: $(containerRegistry).azurecr.io/$(repositoryName):latest
+      endpoint: ${{parameters.name}}
     steps:
     - bash: echo ${{parameters.name}}
