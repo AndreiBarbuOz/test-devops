@@ -1,19 +1,11 @@
 
 variables:
 - group: demo-vm-deploy
-- name: var2
-  value: demovmcontainer
 
 trigger:
 - master
 
-jobs:
-- job: build
-  pool:
-    vmImage: 'ubuntu-latest'
-  container:
-    image: $(containerRegistry).azurecr.io/$(repositoryName):latest
-    endpoint: $(dockerConnection)
-  steps:
-  - bash: echo $(var2)
-  - bash: echo $(containerRegistry)
+stages: 
+- template: tasks.yml
+  parameters:
+    name: $(dockerConnection)

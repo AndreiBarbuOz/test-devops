@@ -1,0 +1,9 @@
+parameters:
+  name: ''
+
+jobs:
+- job: build
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - bash: echo $(parameters.name)
