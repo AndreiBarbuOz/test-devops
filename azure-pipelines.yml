@@ -7,19 +7,10 @@ variables:
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
-
 jobs:
 - job: build
-  container:
-    endpoint: $(var2)
-    image: $(containerRegistry).azurecr.io/$(repositoryName):latest
-
+  pool:
+    vmImage: 'ubuntu-latest'
   steps:
-  - script: |
-      pwd
-      ls
-      ansible --version
-      packer --version
-    displayName: 'Run a multi-line script'
+  - bash: echo $(var2)
+  - bash: echo $(containerRegistry)
