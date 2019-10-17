@@ -9,6 +9,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo $(azureSubscription)
-  displayName: Run $[variables.azureSubscription] a one-line script
-
+- task: AzureCLI@2
+  displayName: Build and Push the Docker image
+  inputs:
+    azureSubscription: $(variables.azureSubscription)
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+      az acr login --name $(containerRegistry)
