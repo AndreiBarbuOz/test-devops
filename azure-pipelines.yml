@@ -9,14 +9,17 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-container:
-  endpoint: $(var2)
-  image: $(containerRegistry).azurecr.io/$(repositoryName):latest
-steps:
 
-- script: |
-    pwd
-    ls
-    ansible --version
-    packer --version
-  displayName: 'Run a multi-line script'
+jobs:
+- job: build
+  container:
+    endpoint: $(var2)
+    image: $(containerRegistry).azurecr.io/$(repositoryName):latest
+
+  steps:
+  - script: |
+      pwd
+      ls
+      ansible --version
+      packer --version
+    displayName: 'Run a multi-line script'
