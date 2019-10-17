@@ -9,6 +9,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo $(variables.azureSubscription)
+- script: echo $(azureSubscription)
   displayName: 'Run a one-line script'
 
