@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 container:
-  endpoint: $(containerRegistry)
+  endpoint: demovmcontainer
   image: $(containerRegistry).azurecr.io/$(repositoryName):latest
 steps:
 
