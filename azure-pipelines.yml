@@ -11,6 +11,8 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
+    - bash: echo $repositoryName
+    - bash: echo $REPOSITORYNAME
     - task: Bash@3
       inputs:
         targetType: filePath
