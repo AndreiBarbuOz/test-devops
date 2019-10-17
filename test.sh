@@ -1,3 +1,3 @@
-echo $MYSECRET
+echo $MySecret
 echo test
 echo $REPOSITORYNAME
