@@ -1,7 +1,8 @@
 
 variables:
 - group: demo-vm-deploy
-
+- name: var2
+  value: demovmcontainer
 
 trigger:
 - master
@@ -9,7 +10,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 container:
-  endpoint: $[variables['containerRegistry']]
+  endpoint: $(var2)
   image: $(containerRegistry).azurecr.io/$(repositoryName):latest
 steps:
 
