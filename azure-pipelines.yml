@@ -2,18 +2,20 @@
 variables:
 - group: demo-vm-deploy
 
+
 trigger:
 - master
 
 pool:
   vmImage: 'ubuntu-latest'
-
+container:
+  endpoint: $(containerRegistry)
+  image: $(containerRegistry).azurecr.io/$(repositoryName):latest
 steps:
-- task: AzureCLI@2
-  displayName: Build and Push the Docker image
-  inputs:
-    azureSubscription: $(azureSubscription)
-    scriptType: bash
-    scriptLocation: inlineScript
-    inlineScript: |
-      az acr login --name $(containerRegistry)
+
+- script: |
+    pwd
+    ls
+    ansible --version
+    packer --version
+  displayName: 'Run a multi-line script'
