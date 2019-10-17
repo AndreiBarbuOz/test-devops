@@ -13,7 +13,7 @@ jobs:
     vmImage: 'ubuntu-latest'
   container:
     image: $(containerRegistry).azurecr.io/$(repositoryName):latest
-    endpoint: demovmcontainer
+    endpoint: $(dockerConnection)
   steps:
   - bash: echo $(var2)
   - bash: echo $(containerRegistry)
