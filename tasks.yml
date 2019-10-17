@@ -5,7 +5,7 @@ stages:
 - stage: test_1
   jobs:
   - job: build
-  pool:
-      vmImage: 'ubuntu-latest'
-  steps:
-  - bash: echo $(parameters.name)
+    pool:
+        vmImage: 'ubuntu-latest'
+    steps:
+    - bash: echo $(parameters.name)
