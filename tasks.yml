@@ -1,8 +1,7 @@
-variables: 
-- group: demo-vm-deploy
-
 parameters:
-  name: ''
+  dockerConnection: $(dockerConnection)
+  repositoryName: $(repositoryName)
+  containerRegistry: $(containerRegistry)
 
 stages:
 - stage: test_1
@@ -11,7 +10,7 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     container:
-      image: $(containerRegistry).azurecr.io/$(repositoryName):latest
-      endpoint: ${{parameters.name}}
+      image: ${{parameters.containerRegistry}}.azurecr.io/${{parameters.repositoryName}}:latest
+      endpoint: ${{parameters.dockerConnection}}
     steps:
-    - bash: echo ${{parameters.name}}
+    - bash: echo ${{parameters.dockerConnection}}

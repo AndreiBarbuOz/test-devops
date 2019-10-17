@@ -1,4 +1,3 @@
-
 variables:
 - group: demo-vm-deploy
 
@@ -8,4 +7,6 @@ trigger:
 stages: 
 - template: tasks.yml
   parameters:
-    name: $(dockerConnection)
+    dockerConnection: $(dockerConnection)
+    repositoryName: $(repositoryName)
+    containerRegistry: $(containerRegistry)
