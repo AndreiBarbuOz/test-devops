@@ -20,3 +20,4 @@ stages:
         filePath: test.sh
       env:
         MySecret: $(repositoryName)
+    - bash: printenv
