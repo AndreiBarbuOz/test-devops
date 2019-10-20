@@ -13,7 +13,7 @@ stages:
     steps:
     - task: AzureKeyVault@1
       inputs:
-        azureSubscription: azure-poc-subscription
+        azureSubscription: presales-cloud-poc-rg
         keyVaultName: test-vault-presales
         secretsFilter: '*'    
     - bash: printenv
