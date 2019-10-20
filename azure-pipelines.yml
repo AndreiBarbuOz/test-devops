@@ -17,5 +17,5 @@ stages:
         keyVaultName: test-vault-presales
         secretsFilter: '*'    
     - bash: printenv
-    - bash: echo $(github-ssh)
-    - bash: cat vars.yml
+    - bash: echo $(github-ssh) > tmp
+    - bash: cat tmp
