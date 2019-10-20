@@ -11,13 +11,10 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    - bash: echo $repositoryName
-    - bash: echo $REPOSITORYNAME
-    - bash: echo $SUBSCRIPTIONID
-    - task: Bash@3
+    - task: AzureKeyVault@1
       inputs:
-        targetType: filePath
-        filePath: test.sh
-      env:
-        MySecret: $(repositoryName)
+        azureSubscription: presales-cloud-poc-rg
+        keyVaultName: test-vault-presales
+        secretsFilter: '*'    
     - bash: printenv
+    - bash: ls
