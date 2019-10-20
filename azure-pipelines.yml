@@ -20,4 +20,7 @@ stages:
         inlineScript:  |
           az --version
           az account show
+          az keyvault secret download --id https://test-vault-presales.vault.azure.net/secrets/github-ssh --file temp
+    - bash: ls
+    - bash: cat temp
 
