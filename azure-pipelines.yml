@@ -11,12 +11,13 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    - task: AzureKeyVault@1
+    - task: AzureCLI@2
+      displayName: Build and Push the Docker image
       inputs:
-        azureSubscription: presales-cloud-poc-rg 
-        keyVaultName: test-vault-presales
-        secretsFilter: '*'    
-    - bash: printenv
-    - bash: echo "$(github-ssh)" >> tmp
-    - bash: ls
-    - bash: cat tmp
+        azureSubscription: presales-cloud-poc-rg
+        scriptType: bash
+        scriptLocation: inlineScript
+        inlineScript:  |
+          az --version
+          az account show
+
