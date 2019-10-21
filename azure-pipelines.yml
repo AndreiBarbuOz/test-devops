@@ -10,13 +10,11 @@ container:
   image: $(containerRegistry).azurecr.io/$(repositoryName):latest
   endpoint: demovmcontainer
 
-stages:
-- stage: test_1
-  jobs:
-  - job: build
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
+jobs:
+- job: build
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
 #    - task: AzureCLI@2
 #      displayName: Build and Push the Docker image
 #      inputs:
@@ -27,6 +25,6 @@ stages:
 #          az --version
 #          az account show
 #          az keyvault secret download --id https://test-vault-presales.vault.azure.net/secrets/github-ssh --file temp
-    - bash: az --version
-    - bash: cat temp
+  - bash: az --version
+  - bash: cat temp
 
