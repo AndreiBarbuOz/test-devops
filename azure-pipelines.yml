@@ -10,11 +10,7 @@ container:
   image: $(containerRegistry).azurecr.io/$(repositoryName):latest
   endpoint: demovmcontainer
 
-jobs:
-- job: build
-  pool:
-    vmImage: 'ubuntu-latest'
-  steps:
+steps:
 #    - task: AzureCLI@2
 #      displayName: Build and Push the Docker image
 #      inputs:
