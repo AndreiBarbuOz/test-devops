@@ -1,26 +1,21 @@
+name: test1
+
 variables:
 - group: demo-vm-deploy
 
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-16.04'
-container:
-  image: $(containerRegistry).azurecr.io/$(repositoryName):latest
-  endpoint: demovmcontainer
+stages: 
+  - stage: stage1
+    displayName: test stage 1
+    jobs:
+      - job: job1
+        displayName: test job1
+        pool:
+          vmImage: 'ubuntu-16.04'
 
-steps:
-#    - task: AzureCLI@2
-#      displayName: Build and Push the Docker image
-#      inputs:
-#        azureSubscription: presales-cloud-poc-rg
-#        scriptType: bash
-#        scriptLocation: inlineScript
-#        inlineScript:  |
-#          az --version
-#          az account show
-#          az keyvault secret download --id https://test-vault-presales.vault.azure.net/secrets/github-ssh --file temp
-  - bash: az --version
-  - bash: cat temp
+        steps:
+          - bash: pwd
+          - bash: ls -a
 
