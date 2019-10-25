@@ -2,7 +2,7 @@ name: test1
 
 resources:
   repositories:
-    - repository: test1
+    - repository: "test-devops"
       type: GitHub
       connection: AndreiBarbuOz
       source: AndreiBarbuOz/test-devops
