@@ -5,7 +5,7 @@ resources:
     - repository: "test-devops"
       type: GitHub
       connection: AndreiBarbuOz
-      source: AndreiBarbuOz/test-devops
+      name: AndreiBarbuOz/test-devops
       trigger:
         branches:
           - master
