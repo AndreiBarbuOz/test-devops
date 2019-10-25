@@ -6,6 +6,10 @@ resources:
       type: GitHub
       endpoint: AndreiBarbuOz
       name: AndreiBarbuOz/test-devops
+    - repository: "uipath-demo-image"
+      type: GitHub
+      endpoint: AndreiBarbuOz
+      name: AndreiBarbuOz/uipath-demo-image
 #      trigger:
 #        branches:
 #          - master
