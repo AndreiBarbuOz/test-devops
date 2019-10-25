@@ -4,11 +4,11 @@ resources:
   repositories:
     - repository: "test-devops"
       type: GitHub
-      connection: AndreiBarbuOz
+      endpoint: AndreiBarbuOz
       name: AndreiBarbuOz/test-devops
-      trigger:
-        branches:
-          - master
+#      trigger:
+#        branches:
+#          - master
 
 variables:
 - group: demo-vm-deploy
