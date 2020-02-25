@@ -23,4 +23,6 @@ stages:
               echo $(Build.BuildNumber)
               echo $(Build.BuildId)
               echo "$BUILD_BUILDNUMBER"
+          - bash: |
+              echo "##vso[task.setvariable variable=major]3"
 
