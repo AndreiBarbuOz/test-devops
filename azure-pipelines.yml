@@ -22,5 +22,5 @@ stages:
               echo $(minor)
               echo $(Build.BuildNumber)
               echo $(Build.BuildId)
-              echo $(BUILD_BUILDNUMBER)
+              echo "$BUILD_BUILDNUMBER"
 
