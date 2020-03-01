@@ -18,11 +18,6 @@ stages:
 
         steps:
           - bash: |
-              echo $(major)
-              echo $(minor)
-              echo $(Build.BuildNumber)
-              echo $(Build.BuildId)
-              echo "$BUILD_BUILDNUMBER"
-          - bash: |
-              echo "##vso[task.setvariable variable=major]3"
+              VAR1="literal/${major}/literal/${minor}"
+              echo $VAR1
 
