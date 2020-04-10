@@ -1,8 +1,7 @@
 name: test1
 
-
 variables:
-- group: test
+- group: test-devops
 
 trigger:
 - master
