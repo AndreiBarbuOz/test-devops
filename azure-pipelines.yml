@@ -18,7 +18,8 @@ stages:
       displayName: Build and push an image to container registry
       inputs:
         command: buildAndPush
-        repository: test-devops
+        repository: $(registryName)
         containerRegistry: $(containerRegistry)
         tags: |
           $(Build.BuildNumber)
+          latest
