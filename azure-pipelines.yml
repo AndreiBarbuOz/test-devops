@@ -19,6 +19,6 @@ stages:
       inputs:
         command: buildAndPush
         repository: test-devops
-        containerRegistry: demovmcontainer
+        containerRegistry: $(containerRegistry)
         tags: |
           $(Build.BuildNumber)
