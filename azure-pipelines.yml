@@ -18,6 +18,6 @@ stages:
 
         steps:
           - bash: |
-              VAR1="literal/$(major)/literal/$(minor)"
+              VAR1="literal/$(username)/"
               echo $VAR1
 
